@@ -1,0 +1,388 @@
+:root {
+    /* تعریف متغیرهای رنگی */
+    --primary-color: #4CAF50;
+    --primary-dark: #388E3C;
+    --secondary-color: #FFCA28;
+    --secondary-dark: #FFA000;
+    --background-color: #F5F5F5;
+    --text-color: #333;
+    --heading-font: 'Vazirmatn', sans-serif;
+    --body-font: 'Vazirmatn', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+    direction: rtl;
+    text-align: right;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* ============================
+   استایل‌های هدر
+============================ */
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+/* ============================
+   استایل‌های منوی ناوبری
+============================ */
+nav {
+    background-color: var(--primary-dark);
+    padding: 15px 0; /* افزودن پدینگ عمودی */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* مرکز کردن آیتم‌های منو */
+    gap: 20px; /* افزودن فاصله بین آیتم‌های منو */
+}
+
+nav li {
+    /* نیازی به استایل اضافی نیست */
+}
+
+nav li a {
+    display: block;
+    color: #fff;
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 30px; /* گرد کردن دکمه‌ها */
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* افزودن سایه برای برجسته‌تر شدن دکمه‌ها */
+}
+
+nav li a:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-5px); /* ایجاد افکت حرکت به بالا هنگام هاور */
+}
+
+/* ============================
+   استایل‌های محتوای اصلی
+============================ */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+/* ============================
+   استایل‌های بخش معرفی
+============================ */
+#intro {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: #fff;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#intro::before {
+    content: '';
+    background: url('images/intro-bg.jpg') no-repeat center center/cover;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.intro-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+#intro h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    animation: slideInDown 1s ease-out;
+}
+
+.intro-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+    font-weight: 500;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.intro-text {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: background 0.3s, transform 0.3s;
+    animation: bounceIn 3s ease-in-out;
+}
+
+.btn:hover {
+    background: var(--secondary-dark);
+    transform: scale(1.05);
+    color: #fff;
+}
+
+.skills {
+    margin-top: 50px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.skills h3 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #fff59d;
+    font-weight: 700;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills ul li {
+    background: rgba(255, 255, 255, 0.2);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.skills ul li i {
+    font-size: 2em;
+    margin-left: 10px;
+}
+
+.skills ul li:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-5px);
+}
+
+/* ============================
+   استایل‌های بخش خانه و درباره من
+============================ */
+#home, #about-me {
+    background-color: #fff;
+    padding: 60px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#home h2, #about-me h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+#home p, #about-me p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+#about-me a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#about-me a:hover {
+    text-decoration: underline;
+}
+
+/* ============================
+   استایل‌های بخش تماس با من
+============================ */
+#contact {
+    background-color: var(--background-color);
+    padding: 50px 20px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#contact h2 {
+    color: var(--primary-dark);
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+#contact p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+#contact a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+#contact ul {
+    list-style: none;
+    padding: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#contact ul li {
+    display: inline;
+}
+
+#contact ul li a {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#contact ul li a:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+/* ============================
+   استایل‌های فوتر
+============================ */
+footer {
+    background-color: var(--primary-dark);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+/* ============================
+   انیمیشن‌ها
+============================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    80% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ============================
+   استایل‌های رسپانسیو
+============================ */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    .intro-content {
+        padding: 0 20px;
+    }
+
+    .skills ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contact ul {
+        flex-direction: column;
+    }
+}
